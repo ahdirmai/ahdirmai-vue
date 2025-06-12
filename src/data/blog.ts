@@ -1,10 +1,10 @@
-import type { BlogPostMeta } from '../types';
+import type { BlogPostMeta } from '../types/index';
 
 export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'getting-started-with-laravel-why-laravel-and-how-to-install',
     title: 'Getting Started With Laravel: Why Laravel and How To Install',
-    date: '2023-11-01',
+    date: '2023-11-01', // Example date
     excerpt: 'Thinking of diving into PHP web development? Discover why Laravel is a top choice and get a step-by-step guide on how to install it and start building applications.',
   },
   {
@@ -20,14 +20,3 @@ export const blogPosts: BlogPostMeta[] = [
     excerpt: 'Implementing user authentication can be complex. Learn how Laravel Breeze provides a simple and quick way to set up a robust authentication system for your application.',
   },
 ];
-
-// Define the type if it doesn't exist in ../types
-// You might need to add this to src/types/index.ts
-/*
-export interface BlogPostMeta {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-}
-*/
