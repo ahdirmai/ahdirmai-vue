@@ -21,13 +21,13 @@
         <div class="hidden lg:flex items-center space-x-8">
           <a
             v-for="item in navItems"
-            :key="item.id"
-            :href="`#${item.id}`"
+ :key="item.id"
+ :href="item.id.startsWith('#') ? item.id : null"
             class="nav-link relative text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
-            @click.prevent="scrollToSection(item.id)"
-          >
-            {{ item.label }}
-          </a>
+ >
+ <router-link v-if="!item.id.startsWith('#')" :to="item.id" @click="isMobileMenuOpen = false">{{ item.label }}</router-link>
+ <a v-else :href="item.id" @click.prevent="scrollToSection(item.id)">{{ item.label }}</a>
+ </a >
         </div>
 
         <!-- Theme Toggle & Mobile Menu Button -->
@@ -59,13 +59,13 @@
         <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
           <a
             v-for="item in navItems"
-            :key="item.id"
-            :href="`#${item.id}`"
+ :key="item.id"
+ :href="item.id.startsWith('#') ? item.id : null"
             class="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
-            @click.prevent="scrollToSection(item.id)"
-          >
-            {{ item.label }}
-          </a>
+ >
+ <router-link v-if="!item.id.startsWith('#')" :to="item.id" @click="isMobileMenuOpen = false">{{ item.label }}</router-link>
+ <a v-else :href="item.id" @click.prevent="scrollToSection(item.id)">{{ item.label }}</a>
+ </a >
         </div>
       </div>
     </div>
@@ -81,14 +81,14 @@ const { isScrolled, isMobileMenuOpen, toggleMobileMenu, scrollToSection } =
 const { isDark, toggleTheme } = useTheme();
 
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "experience", label: "Experience" },
-  { id: "education", label: "Education" },
-  { id: "portfolio", label: "Portfolio" },
+  { id: "#home", label: "Home" },
+  { id: "#experience", label: "Experience" },
+  { id: "#education", label: "Education" },
+  { id: "#portfolio", label: "Portfolio" },
   { id: "blog", label: "Blog" },
-  { id: "certifications", label: "Certifications" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
+  { id: "#certifications", label: "Certifications" },
+  { id: "#skills", label: "Skills" },
+  { id: "#contact", label: "Contact" },
 ];
 </script>
 

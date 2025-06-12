@@ -9,14 +9,7 @@
     />
 
     <AppNavigation />
-    <HeroSection />
-    <ExperienceSection />
-    <EducationSection />
-    <PortfolioSection />
-    <BlogSection />
-    <CertificationsSection />
-    <SkillsSection />
-    <ContactSection />
+ <router-view />
     <AppFooter />
   </div>
 </template>
@@ -24,14 +17,6 @@
 <script setup lang="ts">
 import { useScrollAnimation } from "./composables/useScrollAnimation";
 import AppNavigation from "./components/AppNavigation.vue";
-import HeroSection from "./components/HeroSection.vue";
-import ExperienceSection from "./components/ExperienceSection.vue";
-import EducationSection from "./components/EducationSection.vue";
-import PortfolioSection from "./components/PortfolioSection.vue";
-import BlogSection from "./components/BlogSection.vue";
-import CertificationsSection from "./components/CertificationsSection.vue";
-import SkillsSection from "./components/SkillsSection.vue";
-import ContactSection from "./components/ContactSection.vue";
 import AppFooter from "./components/AppFooter.vue";
 
 // Initialize scroll animations
