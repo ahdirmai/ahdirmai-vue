@@ -51,5 +51,5 @@
 </template>
 
 <script setup lang="ts">
-import { technicalSkills, softSkills } from '@/data/portfolio'
+import { technicalSkills, softSkills } from '../data/portfolio'
 </script>

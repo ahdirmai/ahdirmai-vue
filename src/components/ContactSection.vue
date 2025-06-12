@@ -2,7 +2,9 @@
   <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-5 max-w-6xl">
       <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4"
+        >
           CONTACT
         </h2>
         <div class="w-16 h-1 bg-black dark:bg-white"></div>
@@ -10,28 +12,40 @@
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Contact Info -->
-        <div class="animate-on-scroll bg-white dark:bg-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:transform hover:-translate-y-2 transition-all duration-300 shadow-lg">
+        <div
+          class="animate-on-scroll bg-white dark:bg-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:transform hover:-translate-y-2 transition-all duration-300 shadow-lg"
+        >
           <h3 class="text-2xl font-bold text-black dark:text-white mb-6">
             Get In Touch
           </h3>
           <div class="space-y-6">
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0"
+              >
                 <i class="fas fa-map-marker-alt text-black dark:text-white"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-black dark:text-white mb-1">Location</h4>
-                <p class="text-gray-700 dark:text-gray-300 text-sm">{{ contactInfo.location }}</p>
+                <h4 class="font-semibold text-black dark:text-white mb-1">
+                  Location
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm">
+                  {{ contactInfo.location }}
+                </p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0"
+              >
                 <i class="fas fa-envelope text-black dark:text-white"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-black dark:text-white mb-1">Email</h4>
-                <a 
-                  :href="`mailto:${contactInfo.email}`" 
+                <h4 class="font-semibold text-black dark:text-white mb-1">
+                  Email
+                </h4>
+                <a
+                  :href="`mailto:${contactInfo.email}`"
                   class="text-gray-700 dark:text-gray-300 text-sm hover:text-black dark:hover:text-white transition-colors"
                 >
                   {{ contactInfo.email }}
@@ -39,13 +53,17 @@
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0"
+              >
                 <i class="fas fa-phone text-black dark:text-white"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-black dark:text-white mb-1">Phone</h4>
-                <a 
-                  :href="`tel:${contactInfo.phone}`" 
+                <h4 class="font-semibold text-black dark:text-white mb-1">
+                  Phone
+                </h4>
+                <a
+                  :href="`tel:${contactInfo.phone}`"
                   class="text-gray-700 dark:text-gray-300 text-sm hover:text-black dark:hover:text-white transition-colors"
                 >
                   {{ contactInfo.phone }}
@@ -56,7 +74,9 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="animate-on-scroll bg-white dark:bg-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:transform hover:-translate-y-2 transition-all duration-300 shadow-lg">
+        <div
+          class="animate-on-scroll bg-white dark:bg-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:transform hover:-translate-y-2 transition-all duration-300 shadow-lg"
+        >
           <h3 class="text-2xl font-bold text-black dark:text-white mb-6">
             Send Message
           </h3>
@@ -103,28 +123,28 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import { contactInfo } from '@/data/portfolio'
-import type { ContactForm } from '@/types'
+import { reactive } from "vue";
+import { contactInfo } from "../data/portfolio";
+import type { ContactForm } from "../types";
 
 const form = reactive<ContactForm>({
-  name: '',
-  email: '',
-  message: ''
-})
+  name: "",
+  email: "",
+  message: "",
+});
 
 const handleSubmit = (e: Event) => {
-  e.preventDefault()
-  
+  e.preventDefault();
+
   // In a real application, you would send this data to a server
-  console.log('Form submitted:', form)
-  
+  console.log("Form submitted:", form);
+
   // Show success message
-  alert('Message sent successfully! (This is a demo)')
-  
+  alert("Message sent successfully! (This is a demo)");
+
   // Reset form
-  form.name = ''
-  form.email = ''
-  form.message = ''
-}
+  form.name = "";
+  form.email = "";
+  form.message = "";
+};
 </script>

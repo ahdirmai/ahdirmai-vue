@@ -2,7 +2,9 @@
   <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-5 max-w-6xl">
       <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4"
+        >
           WORK EXPERIENCE
         </h2>
         <div class="w-16 h-1 bg-black dark:bg-white"></div>
@@ -37,5 +39,5 @@
 </template>
 
 <script setup lang="ts">
-import { experiences } from '@/data/portfolio'
+import { experiences } from "../data/portfolio";
 </script>

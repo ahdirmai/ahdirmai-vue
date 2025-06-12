@@ -2,7 +2,9 @@
   <section id="portfolio" class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-5 max-w-6xl">
       <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4"
+        >
           PORTFOLIO
         </h2>
         <div class="w-16 h-1 bg-black dark:bg-white"></div>
@@ -25,7 +27,9 @@
             <h3 class="text-xl font-bold text-black dark:text-white mb-3">
               {{ project.title }}
             </h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+            <p
+              class="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed"
+            >
               {{ project.description }}
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
@@ -63,5 +67,5 @@
 </template>
 
 <script setup lang="ts">
-import { projects } from '@/data/portfolio'
+import { projects } from "../data/portfolio";
 </script>

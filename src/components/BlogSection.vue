@@ -2,7 +2,9 @@
   <section id="blog" class="py-20">
     <div class="container mx-auto px-5 max-w-6xl">
       <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4"
+        >
           BLOG
         </h2>
         <div class="w-16 h-1 bg-black dark:bg-white"></div>
@@ -14,14 +16,20 @@
           :key="index"
           class="animate-on-scroll bg-white dark:bg-gray-900 p-8 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:transform hover:-translate-y-2 transition-all duration-300 shadow-lg flex flex-col"
         >
-          <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm mb-3">
+          <div
+            class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm mb-3"
+          >
             <i class="far fa-calendar"></i>
             <span>{{ post.date }}</span>
           </div>
-          <h3 class="text-xl font-bold text-black dark:text-white mb-4 leading-tight">
+          <h3
+            class="text-xl font-bold text-black dark:text-white mb-4 leading-tight"
+          >
             {{ post.title }}
           </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed flex-grow">
+          <p
+            class="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed flex-grow"
+          >
             {{ post.excerpt }}
           </p>
           <a
@@ -38,5 +46,5 @@
 </template>
 
 <script setup lang="ts">
-import { blogPosts } from '@/data/portfolio'
+import { blogPosts } from "../data/portfolio";
 </script>

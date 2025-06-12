@@ -89,7 +89,7 @@
 </template>
 
 <script setup lang="ts">
-import { useNavigation } from "@/composables/useNavigation";
+import { useNavigation } from "../composables/useNavigation";
 
 const { scrollToSection } = useNavigation();
 </script>
