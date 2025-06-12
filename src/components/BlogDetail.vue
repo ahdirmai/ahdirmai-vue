@@ -24,25 +24,27 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
+
 interface BlogPost {
-  id: number;
+  slug: string;
   title: string;
   date: string;
   content: string;
 }
 
 const route = useRoute();
-const blogPost = ref<BlogPost | null>(null);
+const blogPost = ref<BlogPost | null>(null); // Initialize with null
 
 onMounted(async () => {
-  const postId = Number(route.params.id);
+  const slug = route.params.slug as string;
   try {
-    // Assumes your JSON file is at src/data/blogPosts.json
-    const response = await fetch("/src/data/blogPosts.json");
-    const posts: BlogPost[] = await response.json();
-    blogPost.value = posts.find(post => post.id === postId) || null;
+    // Dynamically import the JSON file based on the slug
+    const postModule = await import(`/src/data/${slug}.json`);
+    blogPost.value = postModule.default as BlogPost;
   } catch (error) {
+    console.error(`Failed to load blog post: ${slug}`, error);
     blogPost.value = null;
+    // Optionally, redirect to a 404 page or display an error message
   }
 });
 </script>
